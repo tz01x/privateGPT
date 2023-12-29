@@ -34,8 +34,7 @@ def main():
     qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=retriever, return_source_documents=True)
     # Interactive questions and answers
     while True:
-        query = input("\nEnter a query: ")
-        if query == "exit":
+        if (query := input("\nEnter a query: ")) == "exit":
             break
         
         # Get the answer from the chain
